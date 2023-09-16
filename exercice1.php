@@ -9,13 +9,16 @@
 <h2> Personnage : </h2>
 
 <?php 
-$p1 = new Personnage("Luke","playerRobert.png",27,true,5,4);
+
+// personnage::HOMME personnage::FEMME appelle les constantes de classe se trouvant dans l'objet personnage
+// permet de donner un nom à une valeur
+$p1 = new Personnage("Luke","playerRobert.png",personnage::HOMME,true,personnage::FORCE_MAX,personnage::AGILITE_MIN);
 $p1->afficherMesInformationsTemplate();
 echo "<br/>-------------------------------<br/>";
-$p2 = new Personnage("Katy","playerKaty.png",25,false,3,6);
+$p2 = new Personnage("Katy","playerKaty.png",25,personnage::FEMME,personnage::FORCE_MIN,personnage::AGILITE_MAX);
 $p2->afficherMesInformationsTemplate();
 echo "<br/>-------------------------------<br/>";
-$p3 = new Personnage("Marc","playerYves.png",33,true,7,2);
+$p3 = new Personnage("Marc","playerYves.png",33,personnage::HOMME,personnage::FORCE_MED,personnage::AGILITE_MED);
 $p3->afficherMesInformationsTemplate();
 ?>
 
