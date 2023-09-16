@@ -1,12 +1,12 @@
 <?php 
 // objets
 class Personnage{
-    public $nom;
-    public $img;
-    public $age;
-    public $sexe;
-    public $force;
-    public $agilite;
+    private $nom;
+    private $img;
+    private $age;
+    private $sexe;
+    private $force;
+    private $agilite;
 
     function __construct($nom,$img,$age,$sexe,$force,$agilite){
         $this->nom = $nom;
@@ -16,6 +16,22 @@ class Personnage{
         $this->force = $force;
         $this->agilite = $agilite;
     }
+//  GETTER permet de recupérer les données privé
+function getNom(){return $this->nom;}
+function getImg(){return $this->img;}
+function getAge(){return $this->age;}
+function getSexe(){return $this->sexe;}
+function getForce(){return $this->force;}
+function getAgilite(){return $this->agilite;}
+
+//  SETTTER permet de modifier les données privé
+    function setName($nom){$this->nom=$nom;}
+    function setImg($img){$this->img=$img;}
+    function setAge($age){$this->age=$age;}
+    // force agilite et sexe non modifiable
+    // function setSexe($sexe){$this->nom=$sexe;}
+    // function setForce($force){$this->nom=$force;}
+    // function setAgilite($agilite){$this->nom=$agilite;}
 
     public function afficherMesInfos(){
         echo "<b>Nom : </b>" . $this->nom ."<br/>";
