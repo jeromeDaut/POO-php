@@ -1,6 +1,10 @@
 <?php 
 // objets
 class Personnage{
+    // static permet que l'attribut($personnages) soit disponible depuis la classe elle-même.
+    // Je stocke les personnages dans un tableau (voir l.34)
+    private static $personnages =[];
+
     private $nom;
     private $img;
     private $age;
@@ -27,6 +31,11 @@ class Personnage{
         $this->sexe = $sexe;
         $this->force = $force;
         $this->agilite = $agilite;
+        // stockage des données dans le tableau $personnages
+        // self:: permet l'acces au tableau
+        // pour l'afficher =>exercice1.php(23)
+        self::$personnages[]= $this;
+
     }
 //  GETTER permet de recupérer les données privé
 function getNom(){return $this->nom;}
@@ -66,6 +75,10 @@ function getAgilite(){return $this->agilite;}
         $this->afficherMesInfos();
         echo "</div>";
         echo "<div class='clearB'></div>";
+    }
+
+    public static function getListePersonnage() {
+        return self::$personnages;
     }
 }
 
